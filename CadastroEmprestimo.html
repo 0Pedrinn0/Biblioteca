@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Emprestimo</title>
+</head>
+<body>
+
+    <style>
+        html,body{
+            margin: 0;
+            height: 100%;
+        }
+        .tudo {
+            color: white;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: hsl(0, 0%, 8%);
+        }
+        .caixa{
+            background-color: hsl(0, 0%, 12%);
+            min-height: 400px;
+            width: 25%;
+            border: 2px;
+            backdrop-filter: blur(10px); 
+            border-radius: 20px;
+            margin: 2%;
+            padding: 20px;
+        }
+        .inputtext{
+            border: none;
+            background-color: rgba(213, 213, 213, 0.859);
+            border-radius: 5px;
+            height: 30px;
+            width: 80%;
+            margin: 0 0 20px 0;
+            outline: none;
+        }
+        .descricao{
+            margin: 0 0 10px 0;
+        }
+        .bot{
+            display: inline-block;
+            background: hsl(0, 0%, 20%);
+            border-radius: 3px;
+            border:  none;
+            padding: 15px 25px 15px 25px;  
+            color: rgb(255, 255, 255);
+        }
+        .bot:hover{
+            background-color: hsl(0, 0%, 100%);
+            transition:background-color 0.4s, color 0.4s;
+            color: black;
+        }
+        .botH{
+            align-self: stretch;
+            text-decoration: none;
+            background: hsl(0, 0%, 20%);
+            border-radius: 3px;
+            border: none;
+            padding: 15px 25px 15px 25px;  
+            color: rgb(255, 255, 255);
+        }
+        .botH:hover{
+            background-color: hsl(0, 0%, 100%);
+            transition:background-color 0.4s, color 0.4s;
+            color: black;
+        }
+    </style>
+    <div class="tudo">
+        <div class="caixa">
+            <h2 class="titulo">Cadastrar Emprestimo</h2>
+            <h4 class="descricao" >Usuario</h4>
+            <input type="text" required class="inputtext" id="nomeC">
+            <h4 class="descricao">Livro</h4>
+            <input type="text" required class="inputtext" id="livro">
+            <h4 class="descricao">Data De Emprestimo</h4>
+            <input type="date" required class="inputtext" id="dataE">
+            <h4 class="descricao">Data De Devolução</h4>
+            <input type="date" required class="inputtext" id="dataD">
+            <a class="bot">Enviar</a>
+            <a class="botH" href="index.html">Home</a>
+        </div>
+    </div>
+</body>
+<script>
+</script>
+</html>
