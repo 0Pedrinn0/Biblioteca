@@ -72,39 +72,17 @@
         }
     </style>
     <div class="tudo">
-        <div class="caixa">
+        <form action="" class="caixa" id="usuario-form">
             <h2 class="titulo">Cadastrar Usuario</h2>
             <h4 class="descricao" >Nome Completo</h4>
             <input type="text" required class="inputtext" id="nomeC"><br>
             <h4 class="descricao">E-mail</h4>
             <input type="text" required class="inputtext" id="emailI"><br>
-            <a class="bot">Enviar</a>
+            <button type="submit" class="bot" id="submit">Enviar</button>
             <a class="botH" href="index.html">Home</a>
-        </div>
+        </form>
     </div>
 </body>
-<script>
-document.querySelector('.bot').addEventListener('click', function(e) {
-    e.preventDefault();
-    const nome = document.getElementById('nomeC').value;
-    const email = document.getElementById('emailI').value;
-
-    fetch('http://localhost:3000/usuario', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ nome, email })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if(data.sucesso){
-            alert('Usuário cadastrado com sucesso! ID: ' + data.id_usuario);
-        } else {
-            alert('Erro ao cadastrar usuário: ' + (data.erro || ''));
-        }
-    })
-    .catch(err => alert('Erro de conexão com o servidor.'));
-});
+<script src="ScriptCU.js">
 </script>
 </html>
