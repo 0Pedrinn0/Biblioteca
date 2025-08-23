@@ -47,6 +47,19 @@ app.get('/emprestimo/:id', (req, res) => {
   );
 });
 
+app.put('/emprestimo/:id', (req, res) => {
+  const { status } = req.body;
+  const id = req.params.id;
+  db.query(
+    'UPDATE emprestimo_tb SET status = ? WHERE id_emprestimo = ?',
+    [status, id],
+    (err, result) => {
+      if (err) return res.status(500).json({ sucesso: false, erro: err.message });
+      res.json({ sucesso: true });
+    }
+  );
+});
+
 app.post('/usuario', (req, res) => {
   const { nome, email } = req.body;
   console.log('Recebido:', nome, email); // Adicione esta linha
